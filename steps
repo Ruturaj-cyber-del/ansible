@@ -1,0 +1,19 @@
+first created the 2 machines [on both machine we have same user name : master]
+
+control node -
+ change the machine name -> 
+ add the entry of managed node ip  with its name[192.168.56.161 node]  [host file --> /etc/hosts]
+ apt install ansible
+ master user add in sudo group
+ generate ssh keygen -- > copy that into key into  managed node machine in same master user machine[.ssh->authorized_keys]
+ Test the ssh access from control to managed node.
+ Make the dir > ansible > create the inventory and playbook file
+  
+
+managed node 
+ master user add in sudo group
+ edit the file > remove the line from [/etc/sudoers] the line is [ Allow  group members ] 
+	add this line to the bottom of this file > [% sudo  ALL=(ALL:ALL) NOPASSWD:ALL]
+	add this line to the bottom of this file > [% USERNAME  ALL=(ALL:ALL) NOPASSWD:ALL] to which you dont want the script to ask for sudo password in this case is [master user]
+
+
